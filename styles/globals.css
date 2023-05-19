@@ -1,0 +1,53 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu,
+    Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  line-height: 1.6;
+  font-size: 18px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  color: #e6713b;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+body {
+  background: rgb(85, 81, 81);
+  /* background: linear-gradient(to bottom, #000000e6, rgba(255, 255, 255, 0.87)); */
+  background-image: url(/images/40139.jpg); 
+}
+
+
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  ul li {
+    /* ปรับแต่งตัวอักษรตามต้องการ */
+  }
+
+  
+
+  
+
+
+
+
