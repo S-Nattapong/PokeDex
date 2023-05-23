@@ -23,7 +23,7 @@ import { useSession, signIn, signOut } from "next-auth/react";
 import SearchButton from "../components/SearchButton";
 
 const baseURL = "https://pokeapi.co/api/v2/pokemon/";
-const pokemonIds = Array.from({ length: 500 }, (_, i) => i + 1);
+const pokemonIds = Array.from({ length: 1000 }, (_, i) => i + 1);
 
 function HomeIcon(props) {
   return (
@@ -97,6 +97,7 @@ export default function PokemonAppBar() {
   const types1 = ["bug", "rock", "ghost", "dragon", "dark", "steel", "fairy"];
   const router = useRouter();
 
+  const [isLoading, setIsLoading] = useState(true);
 
 
   const handleSearch = (event) => {
@@ -124,6 +125,14 @@ export default function PokemonAppBar() {
 
   useEffect(() => {
     if (pokemonList.length > 0) {
+      setIsLoading(false);
+    } else {
+      setIsLoading(true);
+    }
+  }, [pokemonList]);
+
+  useEffect(() => {
+    if (pokemonList.length > 0) {
       const results = pokemonList.filter((pokemon) => {
         const nameMatches = pokemon.name && pokemon.name.includes(searchTerm);
         const typeMatches =
@@ -143,7 +152,7 @@ export default function PokemonAppBar() {
     }
   };
 
-  const { data: session } = useSession();
+
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
   const handleOpenUserMenu = (event) => {
@@ -236,15 +245,6 @@ export default function PokemonAppBar() {
                 signup
               </Button>
             </Link>
-            {session ? (
-              <Button onClick={() => signOut()} color="inherit">
-                Logout
-              </Button>
-            ) : (
-              <Button onClick={() => signIn()} color="inherit">
-                Login
-              </Button>
-            )}
           </Toolbar>
         </AppBar>
       </Box>
@@ -407,6 +407,34 @@ export default function PokemonAppBar() {
             </Box>
           ))}
         </Box>
+        {isLoading && (
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            <img
+              src="images/pikachu.gif"
+              alt="loading"
+              className="loading-gif"
+              width={200}
+              height={200}
+            />
+          </Box>
+        )}
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          <h1> Loading... </h1>
+        </Box>
         <Box
           sx={{
             display: "flex",
@@ -415,7 +443,12 @@ export default function PokemonAppBar() {
             marginLeft: "1rem",
           }}
         >
-          <Button onClick={handleLoadMore} color="primary" variant="contained">
+          <Button
+            sx={{ marginBottom: "2rem" }}
+            onClick={handleLoadMore}
+            color="primary"
+            variant="contained"
+          >
             Load More
           </Button>
         </Box>

@@ -2,13 +2,15 @@ import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import Navbar from "../../components/Navbar";
-import { Box, Container, Grid, Switch } from "@mui/material";
+import { Box, Button, Container, Grid, Switch } from "@mui/material";
 import Head from "next/head";
 import * as React from 'react';
 import { styled } from '@mui/material/styles';
 import Paper from '@mui/material/Paper';
 import StatBar from "../../components/statbar";
-
+import { useDispatch } from "react-redux";
+import { addToTeam } from "../../store/teamSlice";
+import { motion } from "framer-motion";
 
 
 const baseURL = "https://pokeapi.co/api/v2/pokemon/";
@@ -62,6 +64,26 @@ export default function Pokemon() {
   const { id } = router.query;
   const [pokemon, setPokemon] = useState(null);
   const [evolutionChain, setEvolutionChain] = useState([]);
+const dispatch = useDispatch();
+ const [isAddingToTeam, setIsAddingToTeam] = useState(false);
+
+const handleAddToTeam = () => {
+  setIsAddingToTeam(true); // Display the GIF
+
+  setTimeout(() => {
+    dispatch(
+      addToTeam({
+        id: pokemon.id,
+        name: pokemon.name,
+        imageUrl: showShiny
+          ? pokemon.sprites.other["official-artwork"].front_shiny
+          : pokemon.sprites.other["official-artwork"].front_default,
+        stats: pokemon.stats,
+      })
+    );
+    router.push("/team"); // Navigate to the team page
+  }, 2600); // Delay for 3 seconds before navigating
+};
 
   useEffect(() => {
     const fetchPokemon = async () => {
@@ -285,7 +307,7 @@ const getIdFromUrl = (url) => {
                       style={{
                         textAlign: "center",
                         marginRight: "1rem",
-                        fontSize: "13px"
+                        fontSize: "13px",
                       }}
                     >
                       <img
@@ -325,7 +347,39 @@ const getIdFromUrl = (url) => {
                   </React.Fragment>
                 ))}
               </Box>
+
+              <motion.button
+                variant="contained"
+                color="primary"
+                className="mb-4"
+                sx={{ width: "10%", height: "10%" }}
+                type="submit"
+                onClick={handleAddToTeam}
+                whileTap={{ scale: 0.9 }}
+                whileHover={{ rotate: 360, transition: { duration: 1 } }}
+                style={{
+                  borderRadius: "50%",
+                  outline: "none",
+                  border: "none",
+                }}
+              >
+                <img
+                  src="/images/Pokeball-PNG-Pic-Background.png" // เปลี่ยนชื่อไฟล์ภาพเป็น "pokemon-4657023_1280.jpg"
+                  alt="Pokemon Card Deck"
+                  className="mb-4"
+                  style={{ width: "50px", height: "50px", cursor: "pointer" }} // ปรับขนาดรูปภาพให้เต็มพื้นที่ของปุ่ม
+                />
+              </motion.button>
             </Grid>
+            {isAddingToTeam && (
+              <Box sx={{ marginLeft: "9rem" }}>
+                <img
+                  src="/images/ayi0xce9yb7a1.gif" // Replace with the actual path to the GIF
+                  alt="Adding to Team"
+                  style={{ width: "200px", height: "auto" }}
+                />
+              </Box>
+            )}
           </Grid>
         </Grid>
       </Container>
