@@ -364,17 +364,17 @@ const getIdFromUrl = (url) => {
                 }}
               >
                 <img
-                  src="/images/Pokeball-PNG-Pic-Background.png" // เปลี่ยนชื่อไฟล์ภาพเป็น "pokemon-4657023_1280.jpg"
+                  src="/images/Pokeball-PNG-Pic-Background.png" 
                   alt="Pokemon Card Deck"
                   className="mb-4"
-                  style={{ width: "50px", height: "50px", cursor: "pointer" }} // ปรับขนาดรูปภาพให้เต็มพื้นที่ของปุ่ม
+                  style={{ width: "50px", height: "50px", cursor: "pointer" }} 
                 />
               </motion.button>
             </Grid>
             {isAddingToTeam && (
               <Box sx={{ marginLeft: "9rem" }}>
                 <img
-                  src="/images/ayi0xce9yb7a1.gif" // Replace with the actual path to the GIF
+                  src="/images/ayi0xce9yb7a1.gif" 
                   alt="Adding to Team"
                   style={{ width: "200px", height: "auto" }}
                 />

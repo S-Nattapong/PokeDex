@@ -425,16 +425,18 @@ export default function PokemonAppBar() {
             />
           </Box>
         )}
-        <Box
-          sx={{
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            justifyContent: "center",
-          }}
-        >
-          <h1> Loading... </h1>
-        </Box>
+        {isLoading && (
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            <h1> Loading... </h1>
+          </Box>
+        )}
         <Box
           sx={{
             display: "flex",
