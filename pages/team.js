@@ -89,9 +89,9 @@ const getStatColor = (statName) => {
         }}
       >
         <Box sx={{ marginTop: "-10rem", marginLeft: "7rem" }}>
-          <h1 >---- Team Page ----</h1>
+          <h1>---- Team Page ----</h1>
           <label>
-            Team Name : 
+            Team Name :
             <input
               type="text"
               value={teamName}
@@ -117,7 +117,7 @@ const getStatColor = (statName) => {
                 <Box display="flex" flexDirection="column" alignItems="center">
                   <p
                     style={{
-                      fontFamily: "Common Pixel",
+                      fontFamily: "Public Pixel",
                       fontSize: "15px",
                       fontWeight: "bold",
                     }}

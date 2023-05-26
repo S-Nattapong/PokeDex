@@ -49,8 +49,8 @@ body {
   
 
   @font-face {
-  font-family: 'Common Pixel';
-  src: url("../font/COMMP___.ttf"); /* เปลี่ยนเส้นทางเป็นเส้นทางที่ถูกต้องไปยังไฟล์ฟอนต์ */
+  font-family: "Public Pixel";
+  src: url("../font/PublicPixel-eZPz6.ttf"); /* เปลี่ยนเส้นทางเป็นเส้นทางที่ถูกต้องไปยังไฟล์ฟอนต์ */
 }
 
 
