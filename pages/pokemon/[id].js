@@ -76,8 +76,8 @@ const handleAddToTeam = () => {
         id: pokemon.id,
         name: pokemon.name,
         imageUrl: showShiny
-          ? pokemon.sprites.other["official-artwork"].front_shiny
-          : pokemon.sprites.other["official-artwork"].front_default,
+          ? pokemon.sprites.front_shiny
+          : pokemon.sprites.front_default,
         stats: pokemon.stats,
       })
     );

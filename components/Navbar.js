@@ -12,6 +12,7 @@ import SearchIcon from "@mui/icons-material/Search";
 import InputBase from "@mui/material/InputBase";
 import { alpha } from "@mui/material/styles";
 import SvgIcon from "@mui/material/SvgIcon";
+import Link from "next/link";
 
 function HomeIcon(props) {
   return (
@@ -45,7 +46,52 @@ export default function ButtonAppBar() {
               <HomeIcon />
             </Button>
           </Typography>
-          <Button color="inherit">Login</Button>
+          <Box
+              style={{
+                position: "relative",
+                display: "flex",
+                alignItems: "center",
+                borderRadius: "4px",
+                backgroundColor: alpha("#fff", 0.15),
+                marginRight: "8px",
+                width: "100%",
+              }}
+            ></Box>
+            <Link href="./vssim" passHref>
+              <Button
+                color="inherit"
+                sx={{
+                  width: "fit-content",
+                  height: "fit-content",
+                  padding: 0,
+                  border: "none",
+                  backgroundColor: "transparent",
+                  display: "flex",
+                  alignItems: "center",
+                  marginLeft:"15rem"
+                }}
+              >
+                <img
+                  src="/images/versus.png"
+                  alt="Pokemon Card Deck"
+                  className="mb-4"
+                  style={{
+                    maxWidth: "40%",
+                    maxHeight: "auto",
+                    width: "auto",
+                    height: "auto",
+                  }}
+                />
+              </Button>
+            </Link>
+            <Link href="./signup" passHref>
+              <Button
+                color="inherit"
+                style={{ color: "#fff", marginLeft: "8px" }}
+              >
+                signup
+              </Button>
+            </Link>
         </Toolbar>
       </AppBar>
     </Box>

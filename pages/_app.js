@@ -6,11 +6,11 @@ import Layout  from "components/Layout";
 
 export default function MyApp({ Component, pageProps }) {
   return (
-    // <Layout>
+   
     <Provider store={store}>
       <Component {...pageProps} />
     </Provider>
-    // </Layout>
+   
   );
 }
 

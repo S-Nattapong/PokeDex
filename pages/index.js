@@ -21,9 +21,10 @@ import SvgIcon from "@mui/material/SvgIcon";
 import { Container, TextField, Card, CardContent } from "@mui/material";
 import { useSession, signIn, signOut } from "next-auth/react";
 import SearchButton from "../components/SearchButton";
+import Footer from "../components/Footer";
 
 const baseURL = "https://pokeapi.co/api/v2/pokemon/";
-const pokemonIds = Array.from({ length: 1000 }, (_, i) => i + 1);
+const pokemonIds = Array.from({ length: 500 }, (_, i) => i + 1);
 
 function HomeIcon(props) {
   return (
@@ -237,6 +238,33 @@ export default function PokemonAppBar() {
                 width: "100%",
               }}
             ></Box>
+            <Link href="./vssim" passHref>
+              <Button
+                color="inherit"
+                sx={{
+                  width: "fit-content",
+                  height: "fit-content",
+                  padding: 0,
+                  border: "none",
+                  backgroundColor: "transparent",
+                  display: "flex",
+                  alignItems: "center",
+                  marginLeft: "15rem",
+                }}
+              >
+                <img
+                  src="/images/versus.png"
+                  alt="Pokemon Card Deck"
+                  className="mb-4"
+                  style={{
+                    maxWidth: "40%",
+                    maxHeight: "auto",
+                    width: "auto",
+                    height: "auto",
+                  }}
+                />
+              </Button>
+            </Link>
             <Link href="./signup" passHref>
               <Button
                 color="inherit"
@@ -284,8 +312,8 @@ export default function PokemonAppBar() {
                 width: "1%",
                 height: "20px",
                 backgroundColor: selectedTypes.includes(type)
-                  ? getTypeColor(type)
-                  : "black",
+                  ? "black"
+                  : getTypeColor(type),
                 marginTop: "1rem",
                 fontSize: "10px",
                 color: selectedTypes.includes(type) ? "white" : "white",
@@ -293,8 +321,8 @@ export default function PokemonAppBar() {
                 borderColor: "black",
                 "&:hover": {
                   backgroundColor: selectedTypes.includes(type)
-                    ? getTypeColor(type)
-                    : "black",
+                    ? "black"
+                    : getTypeColor(type),
                 },
               }}
             >
@@ -310,8 +338,8 @@ export default function PokemonAppBar() {
                 width: "1%",
                 height: "20px",
                 backgroundColor: selectedTypes.includes(type)
-                  ? getTypeColor(type)
-                  : "black",
+                  ? "black"
+                  : getTypeColor(type),
                 marginTop: "2.5rem",
                 fontSize: "10px",
                 color: selectedTypes.includes(type) ? "white" : "white",
@@ -319,8 +347,8 @@ export default function PokemonAppBar() {
                 borderColor: "black",
                 "&:hover": {
                   backgroundColor: selectedTypes.includes(type)
-                    ? getTypeColor(type)
-                    : "black",
+                    ? "black"
+                    : getTypeColor(type),
                 },
               }}
             >
@@ -454,6 +482,7 @@ export default function PokemonAppBar() {
             Load More
           </Button>
         </Box>
+        <Footer />
       </Container>
     </Box>
   );
