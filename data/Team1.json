@@ -2,6 +2,276 @@
   "teamName": "Team1",
   "pokemonList": [
     {
+      "id": 1,
+      "name": "bulbasaur",
+      "stat": [
+        {
+          "base_stat": 45,
+          "effort": 0,
+          "stat": {
+            "name": "hp",
+            "url": "https://pokeapi.co/api/v2/stat/1/"
+          }
+        },
+        {
+          "base_stat": 49,
+          "effort": 0,
+          "stat": {
+            "name": "attack",
+            "url": "https://pokeapi.co/api/v2/stat/2/"
+          }
+        },
+        {
+          "base_stat": 49,
+          "effort": 0,
+          "stat": {
+            "name": "defense",
+            "url": "https://pokeapi.co/api/v2/stat/3/"
+          }
+        },
+        {
+          "base_stat": 65,
+          "effort": 1,
+          "stat": {
+            "name": "special-attack",
+            "url": "https://pokeapi.co/api/v2/stat/4/"
+          }
+        },
+        {
+          "base_stat": 65,
+          "effort": 0,
+          "stat": {
+            "name": "special-defense",
+            "url": "https://pokeapi.co/api/v2/stat/5/"
+          }
+        },
+        {
+          "base_stat": 45,
+          "effort": 0,
+          "stat": {
+            "name": "speed",
+            "url": "https://pokeapi.co/api/v2/stat/6/"
+          }
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "ivysaur",
+      "stat": [
+        {
+          "base_stat": 60,
+          "effort": 0,
+          "stat": {
+            "name": "hp",
+            "url": "https://pokeapi.co/api/v2/stat/1/"
+          }
+        },
+        {
+          "base_stat": 62,
+          "effort": 0,
+          "stat": {
+            "name": "attack",
+            "url": "https://pokeapi.co/api/v2/stat/2/"
+          }
+        },
+        {
+          "base_stat": 63,
+          "effort": 0,
+          "stat": {
+            "name": "defense",
+            "url": "https://pokeapi.co/api/v2/stat/3/"
+          }
+        },
+        {
+          "base_stat": 80,
+          "effort": 1,
+          "stat": {
+            "name": "special-attack",
+            "url": "https://pokeapi.co/api/v2/stat/4/"
+          }
+        },
+        {
+          "base_stat": 80,
+          "effort": 1,
+          "stat": {
+            "name": "special-defense",
+            "url": "https://pokeapi.co/api/v2/stat/5/"
+          }
+        },
+        {
+          "base_stat": 60,
+          "effort": 0,
+          "stat": {
+            "name": "speed",
+            "url": "https://pokeapi.co/api/v2/stat/6/"
+          }
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "venusaur",
+      "stat": [
+        {
+          "base_stat": 80,
+          "effort": 0,
+          "stat": {
+            "name": "hp",
+            "url": "https://pokeapi.co/api/v2/stat/1/"
+          }
+        },
+        {
+          "base_stat": 82,
+          "effort": 0,
+          "stat": {
+            "name": "attack",
+            "url": "https://pokeapi.co/api/v2/stat/2/"
+          }
+        },
+        {
+          "base_stat": 83,
+          "effort": 0,
+          "stat": {
+            "name": "defense",
+            "url": "https://pokeapi.co/api/v2/stat/3/"
+          }
+        },
+        {
+          "base_stat": 100,
+          "effort": 2,
+          "stat": {
+            "name": "special-attack",
+            "url": "https://pokeapi.co/api/v2/stat/4/"
+          }
+        },
+        {
+          "base_stat": 100,
+          "effort": 1,
+          "stat": {
+            "name": "special-defense",
+            "url": "https://pokeapi.co/api/v2/stat/5/"
+          }
+        },
+        {
+          "base_stat": 80,
+          "effort": 0,
+          "stat": {
+            "name": "speed",
+            "url": "https://pokeapi.co/api/v2/stat/6/"
+          }
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "charmander",
+      "stat": [
+        {
+          "base_stat": 39,
+          "effort": 0,
+          "stat": {
+            "name": "hp",
+            "url": "https://pokeapi.co/api/v2/stat/1/"
+          }
+        },
+        {
+          "base_stat": 52,
+          "effort": 0,
+          "stat": {
+            "name": "attack",
+            "url": "https://pokeapi.co/api/v2/stat/2/"
+          }
+        },
+        {
+          "base_stat": 43,
+          "effort": 0,
+          "stat": {
+            "name": "defense",
+            "url": "https://pokeapi.co/api/v2/stat/3/"
+          }
+        },
+        {
+          "base_stat": 60,
+          "effort": 0,
+          "stat": {
+            "name": "special-attack",
+            "url": "https://pokeapi.co/api/v2/stat/4/"
+          }
+        },
+        {
+          "base_stat": 50,
+          "effort": 0,
+          "stat": {
+            "name": "special-defense",
+            "url": "https://pokeapi.co/api/v2/stat/5/"
+          }
+        },
+        {
+          "base_stat": 65,
+          "effort": 1,
+          "stat": {
+            "name": "speed",
+            "url": "https://pokeapi.co/api/v2/stat/6/"
+          }
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "name": "charmeleon",
+      "stat": [
+        {
+          "base_stat": 58,
+          "effort": 0,
+          "stat": {
+            "name": "hp",
+            "url": "https://pokeapi.co/api/v2/stat/1/"
+          }
+        },
+        {
+          "base_stat": 64,
+          "effort": 0,
+          "stat": {
+            "name": "attack",
+            "url": "https://pokeapi.co/api/v2/stat/2/"
+          }
+        },
+        {
+          "base_stat": 58,
+          "effort": 0,
+          "stat": {
+            "name": "defense",
+            "url": "https://pokeapi.co/api/v2/stat/3/"
+          }
+        },
+        {
+          "base_stat": 80,
+          "effort": 1,
+          "stat": {
+            "name": "special-attack",
+            "url": "https://pokeapi.co/api/v2/stat/4/"
+          }
+        },
+        {
+          "base_stat": 65,
+          "effort": 0,
+          "stat": {
+            "name": "special-defense",
+            "url": "https://pokeapi.co/api/v2/stat/5/"
+          }
+        },
+        {
+          "base_stat": 80,
+          "effort": 1,
+          "stat": {
+            "name": "speed",
+            "url": "https://pokeapi.co/api/v2/stat/6/"
+          }
+        }
+      ]
+    },
+    {
       "id": 6,
       "name": "charizard",
       "stat": [
@@ -48,276 +318,6 @@
         {
           "base_stat": 100,
           "effort": 0,
-          "stat": {
-            "name": "speed",
-            "url": "https://pokeapi.co/api/v2/stat/6/"
-          }
-        }
-      ]
-    },
-        {
-      "id": 4,
-      "name": "charmander",
-      "stat": [
-        {
-          "base_stat": 39,
-          "effort": 0,
-          "stat": {
-            "name": "hp",
-            "url": "https://pokeapi.co/api/v2/stat/1/"
-          }
-        },
-        {
-          "base_stat": 52,
-          "effort": 0,
-          "stat": {
-            "name": "attack",
-            "url": "https://pokeapi.co/api/v2/stat/2/"
-          }
-        },
-        {
-          "base_stat": 43,
-          "effort": 0,
-          "stat": {
-            "name": "defense",
-            "url": "https://pokeapi.co/api/v2/stat/3/"
-          }
-        },
-        {
-          "base_stat": 60,
-          "effort": 0,
-          "stat": {
-            "name": "special-attack",
-            "url": "https://pokeapi.co/api/v2/stat/4/"
-          }
-        },
-        {
-          "base_stat": 50,
-          "effort": 0,
-          "stat": {
-            "name": "special-defense",
-            "url": "https://pokeapi.co/api/v2/stat/5/"
-          }
-        },
-        {
-          "base_stat": 65,
-          "effort": 1,
-          "stat": {
-            "name": "speed",
-            "url": "https://pokeapi.co/api/v2/stat/6/"
-          }
-        }
-      ]
-    },
-        {
-      "id": 4,
-      "name": "charmander",
-      "stat": [
-        {
-          "base_stat": 39,
-          "effort": 0,
-          "stat": {
-            "name": "hp",
-            "url": "https://pokeapi.co/api/v2/stat/1/"
-          }
-        },
-        {
-          "base_stat": 52,
-          "effort": 0,
-          "stat": {
-            "name": "attack",
-            "url": "https://pokeapi.co/api/v2/stat/2/"
-          }
-        },
-        {
-          "base_stat": 43,
-          "effort": 0,
-          "stat": {
-            "name": "defense",
-            "url": "https://pokeapi.co/api/v2/stat/3/"
-          }
-        },
-        {
-          "base_stat": 60,
-          "effort": 0,
-          "stat": {
-            "name": "special-attack",
-            "url": "https://pokeapi.co/api/v2/stat/4/"
-          }
-        },
-        {
-          "base_stat": 50,
-          "effort": 0,
-          "stat": {
-            "name": "special-defense",
-            "url": "https://pokeapi.co/api/v2/stat/5/"
-          }
-        },
-        {
-          "base_stat": 65,
-          "effort": 1,
-          "stat": {
-            "name": "speed",
-            "url": "https://pokeapi.co/api/v2/stat/6/"
-          }
-        }
-      ]
-    },
-        {
-      "id": 4,
-      "name": "charmander",
-      "stat": [
-        {
-          "base_stat": 39,
-          "effort": 0,
-          "stat": {
-            "name": "hp",
-            "url": "https://pokeapi.co/api/v2/stat/1/"
-          }
-        },
-        {
-          "base_stat": 52,
-          "effort": 0,
-          "stat": {
-            "name": "attack",
-            "url": "https://pokeapi.co/api/v2/stat/2/"
-          }
-        },
-        {
-          "base_stat": 43,
-          "effort": 0,
-          "stat": {
-            "name": "defense",
-            "url": "https://pokeapi.co/api/v2/stat/3/"
-          }
-        },
-        {
-          "base_stat": 60,
-          "effort": 0,
-          "stat": {
-            "name": "special-attack",
-            "url": "https://pokeapi.co/api/v2/stat/4/"
-          }
-        },
-        {
-          "base_stat": 50,
-          "effort": 0,
-          "stat": {
-            "name": "special-defense",
-            "url": "https://pokeapi.co/api/v2/stat/5/"
-          }
-        },
-        {
-          "base_stat": 65,
-          "effort": 1,
-          "stat": {
-            "name": "speed",
-            "url": "https://pokeapi.co/api/v2/stat/6/"
-          }
-        }
-      ]
-    },
-        {
-      "id": 4,
-      "name": "charmander",
-      "stat": [
-        {
-          "base_stat": 39,
-          "effort": 0,
-          "stat": {
-            "name": "hp",
-            "url": "https://pokeapi.co/api/v2/stat/1/"
-          }
-        },
-        {
-          "base_stat": 52,
-          "effort": 0,
-          "stat": {
-            "name": "attack",
-            "url": "https://pokeapi.co/api/v2/stat/2/"
-          }
-        },
-        {
-          "base_stat": 43,
-          "effort": 0,
-          "stat": {
-            "name": "defense",
-            "url": "https://pokeapi.co/api/v2/stat/3/"
-          }
-        },
-        {
-          "base_stat": 60,
-          "effort": 0,
-          "stat": {
-            "name": "special-attack",
-            "url": "https://pokeapi.co/api/v2/stat/4/"
-          }
-        },
-        {
-          "base_stat": 50,
-          "effort": 0,
-          "stat": {
-            "name": "special-defense",
-            "url": "https://pokeapi.co/api/v2/stat/5/"
-          }
-        },
-        {
-          "base_stat": 65,
-          "effort": 1,
-          "stat": {
-            "name": "speed",
-            "url": "https://pokeapi.co/api/v2/stat/6/"
-          }
-        }
-      ]
-    },
-        {
-      "id": 4,
-      "name": "charmander",
-      "stat": [
-        {
-          "base_stat": 39,
-          "effort": 0,
-          "stat": {
-            "name": "hp",
-            "url": "https://pokeapi.co/api/v2/stat/1/"
-          }
-        },
-        {
-          "base_stat": 52,
-          "effort": 0,
-          "stat": {
-            "name": "attack",
-            "url": "https://pokeapi.co/api/v2/stat/2/"
-          }
-        },
-        {
-          "base_stat": 43,
-          "effort": 0,
-          "stat": {
-            "name": "defense",
-            "url": "https://pokeapi.co/api/v2/stat/3/"
-          }
-        },
-        {
-          "base_stat": 60,
-          "effort": 0,
-          "stat": {
-            "name": "special-attack",
-            "url": "https://pokeapi.co/api/v2/stat/4/"
-          }
-        },
-        {
-          "base_stat": 50,
-          "effort": 0,
-          "stat": {
-            "name": "special-defense",
-            "url": "https://pokeapi.co/api/v2/stat/5/"
-          }
-        },
-        {
-          "base_stat": 65,
-          "effort": 1,
           "stat": {
             "name": "speed",
             "url": "https://pokeapi.co/api/v2/stat/6/"
