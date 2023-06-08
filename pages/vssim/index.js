@@ -19,6 +19,7 @@ const VSSimPage = () => {
   const [winnerStep5, setWinnerStep5] = useState(null);
   const [winnerStep6, setWinnerStep6] = useState(null);
   const [isBattleClicked, setIsBattleClicked] = useState(false);
+  const [winnerTeam, setWinnerTeam] = useState('');
 
   const fetchPokemon = async (id) => {
     try {
@@ -101,15 +102,19 @@ const VSSimPage = () => {
     const team1Power = Math.floor(Math.random() * 100);
     const team2Power = Math.floor(Math.random() * 100);
 
-    if (team1Power > team2Power) {
-      setWinner(team1Pokemon.name);
-    } else if (team2Power > team1Power) {
-      setWinner(team2Pokemon.name);
-    } else {
-      setWinner("Draw");
-    }
+       if (team1Power > team2Power) {
+         setWinner(team1Pokemon.name);
+         setWinnerTeam("Team 1");
+       } else if (team2Power > team1Power) {
+         setWinner(team2Pokemon.name);
+         setWinnerTeam("Team 2");
+       } else {
+         setWinner("Draw");
+         setWinnerTeam("None");
+       }
     
     setCurrentStep(1);
+    setIsBattleClicked(true);
   };
   
   const handleBattle2ButtonClick = () => {
@@ -119,22 +124,144 @@ const VSSimPage = () => {
     const team1Power = Math.floor(Math.random() * 100);
     const team2Power = Math.floor(Math.random() * 100);
 
-    if (team1Power > team2Power) {
+ if (team1Power > team2Power) {
       setWinnerStep2(team1Pokemon.name);
+      setWinnerTeam("Team 1");
     } else if (team2Power > team1Power) {
       setWinnerStep2(team2Pokemon.name);
+      setWinnerTeam("Team 2");
     } else {
       setWinnerStep2("Draw");
-    }
+      setWinnerTeam("None");
+    }   
 
     setCurrentStep(2);
+    setIsBattleClicked(true);
   };
 
+    const handleBattle3ButtonClick = () => {
+      const team1Pokemon = Team1.pokemonList[2];
+      const team2Pokemon = Team2.pokemonList[2];
+
+      const team1Power = Math.floor(Math.random() * 100);
+      const team2Power = Math.floor(Math.random() * 100);
+
+      if (team1Power > team2Power) {
+        setWinnerStep3(team1Pokemon.name);
+        setWinnerTeam("Team 1");
+      } else if (team2Power > team1Power) {
+        setWinnerStep3(team2Pokemon.name);
+        setWinnerTeam("Team 2");
+      } else {
+        setWinnerStep3("Draw");
+        setWinnerTeam("None");
+      }
+
+      setCurrentStep(3);
+      setIsBattleClicked(true);
+    };
+
+    const handleBattle4ButtonClick = () => {
+        const team1Pokemon = Team1.pokemonList[3];
+        const team2Pokemon = Team2.pokemonList[3];
+
+        const team1Power = Math.floor(Math.random() * 100);
+        const team2Power = Math.floor(Math.random() * 100);
+
+        if (team1Power > team2Power) {
+          setWinnerStep4(team1Pokemon.name);
+          setWinnerTeam("Team 1");
+        } else if (team2Power > team1Power) {
+          setWinnerStep4(team2Pokemon.name);
+          setWinnerTeam("Team 2");
+        } else {
+          setWinnerStep4("Draw");
+          setWinnerTeam("None");
+        }
+
+        setCurrentStep(4);
+        setIsBattleClicked(true);
+      };
+
+      const handleBattle5ButtonClick = () => {
+          const team1Pokemon = Team1.pokemonList[4];
+          const team2Pokemon = Team2.pokemonList[4];
+
+          const team1Power = Math.floor(Math.random() * 100);
+          const team2Power = Math.floor(Math.random() * 100);
+
+          if (team1Power > team2Power) {
+            setWinnerStep5(team1Pokemon.name);
+            setWinnerTeam("Team 1");
+          } else if (team2Power > team1Power) {
+            setWinnerStep5(team2Pokemon.name);
+            setWinnerTeam("Team 2");
+          } else {
+            setWinnerStep5("Draw");
+            setWinnerTeam("None");
+          }
+
+          setCurrentStep(5);
+          setIsBattleClicked(true);
+        };
+
+      const handleBattle6ButtonClick = () => {
+            const team1Pokemon = Team1.pokemonList[5];
+            const team2Pokemon = Team2.pokemonList[5];
+
+            const team1Power = Math.floor(Math.random() * 100);
+            const team2Power = Math.floor(Math.random() * 100);
+
+            if (team1Power > team2Power) {
+              setWinnerStep6(team1Pokemon.name);
+              setWinnerTeam("Team 1");
+            } else if (team2Power > team1Power) {
+              setWinnerStep6(team2Pokemon.name);
+              setWinnerTeam("Team 2");
+            } else {
+              setWinnerStep6("Draw");
+              setWinnerTeam("None");
+            }
+
+            setCurrentStep(6);
+            setIsBattleClicked(true);
+          };
+  
+
 const handleNextButtonClick = () => {
-  if (currentStep < 7) {
+  if (currentStep < 7 && isBattleClicked) {
     setCurrentStep(currentStep + 1);
+    setIsBattleClicked(false);
   }
 };
+const getTeamWithMostWins = () => {
+  const team1Wins = winnerTeam === "Team 1" ? 1 : 0;
+  const team2Wins = winnerTeam === "Team 2" ? 1 : 0;
+
+  // คำนวณจำนวนผู้ชนะในแต่ละขั้น
+  const step1Wins = winner === Team1.pokemonList[0].name ? 1 : 0;
+  const step2Wins = winnerStep2 === Team1.pokemonList[1].name ? 1 : 0;
+  const step3Wins = winnerStep3 === Team1.pokemonList[2].name ? 1 : 0;
+  const step4Wins = winnerStep4 === Team1.pokemonList[3].name ? 1 : 0;
+  const step5Wins = winnerStep5 === Team1.pokemonList[4].name ? 1 : 0;
+  const step6Wins = winnerStep6 === Team1.pokemonList[5].name ? 1 : 0;
+
+  // รวมผู้ชนะในแต่ละขั้น
+  const team1TotalWins =
+    step1Wins + step2Wins + step3Wins + step4Wins + step5Wins + step6Wins;
+
+  const team2TotalWins = 6 - team1TotalWins;
+
+  // ตรวจสอบเงื่อนไขการชนะและการเสมอ
+  if (team1TotalWins > team2TotalWins) {
+    return "Team 1";
+  } else if (team2TotalWins > team1TotalWins) {
+    return "Team 2";
+  } else {
+    return "Draw";
+  }
+};
+
 
   return (
     <Box>
@@ -268,9 +395,9 @@ const handleNextButtonClick = () => {
                 )}
 
                 {currentStep === 1 && (
-                  <div>
+                  <Box>
                     <h1>Step 1</h1>
-                    <div>
+                    <Box>
                       <h2>Team 1 - Pokemon 1:</h2>
                       {Team1.pokemonList.length > 0 && (
                         <img
@@ -278,8 +405,8 @@ const handleNextButtonClick = () => {
                           alt={Team1.pokemonList[0].name}
                         />
                       )}
-                    </div>
-                    <div>
+                    </Box>
+                    <Box>
                       <h2>Team 2 - Pokemon 1:</h2>
                       {Team2.pokemonList.length > 0 && (
                         <img
@@ -287,21 +414,21 @@ const handleNextButtonClick = () => {
                           alt={Team2.pokemonList[0].name}
                         />
                       )}
-                    </div>
+                    </Box>
                     <Button onClick={handleBattleButtonClick}>Battle</Button>
                     {winner && (
-                      <div>
+                      <Box>
                         <h2>Winner:</h2>
                         <p>{winner}</p>
-                      </div>
+                      </Box>
                     )}
                     <Button onClick={handleNextButtonClick}>Next</Button>
-                  </div>
+                  </Box>
                 )}
 
                 {currentStep === 2 && (
-                  <div>
-                    <div>
+                  <Box>
+                    <Box>
                       <h2>Team 1 - Pokemon 1:</h2>
                       {Team1.pokemonList.length > 0 && (
                         <img
@@ -309,8 +436,8 @@ const handleNextButtonClick = () => {
                           alt={Team1.pokemonList[1].name}
                         />
                       )}
-                    </div>
-                    <div>
+                    </Box>
+                    <Box>
                       <h2>Team 2 - Pokemon 1:</h2>
                       {Team2.pokemonList.length > 0 && (
                         <img
@@ -318,51 +445,143 @@ const handleNextButtonClick = () => {
                           alt={Team2.pokemonList[1].name}
                         />
                       )}
-                    </div>
+                    </Box>
                     <Button onClick={handleBattle2ButtonClick}>Battle</Button>
                     {winnerStep2 && (
-                      <div>
+                      <Box>
                         <h2>Winner:</h2>
                         <p>{winnerStep2}</p>
-                      </div>
+                      </Box>
                     )}
                     <Button onClick={handleNextButtonClick}>Next</Button>
-                  </div>
+                  </Box>
                 )}
                 {currentStep === 3 && (
-                  <div>
-                    <h1>Step 3</h1>
-                    {/* Add content for step 2 here */}
+                  <Box>
+                    <Box>
+                      <h2>Team 1 - Pokemon 1:</h2>
+                      {Team1.pokemonList.length > 0 && (
+                        <img
+                          src={getPokemonImageUrl(Team1.pokemonList[2].id)}
+                          alt={Team1.pokemonList[2].name}
+                        />
+                      )}
+                    </Box>
+                    <Box>
+                      <h2>Team 2 - Pokemon 1:</h2>
+                      {Team2.pokemonList.length > 0 && (
+                        <img
+                          src={getPokemonImageUrl(Team2.pokemonList[2].id)}
+                          alt={Team2.pokemonList[2].name}
+                        />
+                      )}
+                    </Box>
+                    <Button onClick={handleBattle3ButtonClick}>Battle</Button>
+                    {winnerStep3 && (
+                      <Box>
+                        <h2>Winner:</h2>
+                        <p>{winnerStep3}</p>
+                      </Box>
+                    )}
                     <Button onClick={handleNextButtonClick}>Next</Button>
-                  </div>
+                  </Box>
                 )}
                 {currentStep === 4 && (
-                  <div>
-                    <h1>Step 4</h1>
-                    {/* Add content for step 2 here */}
+                  <Box>
+                    <Box>
+                      <h2>Team 1 - Pokemon 1:</h2>
+                      {Team1.pokemonList.length > 0 && (
+                        <img
+                          src={getPokemonImageUrl(Team1.pokemonList[3].id)}
+                          alt={Team1.pokemonList[3].name}
+                        />
+                      )}
+                    </Box>
+                    <Box>
+                      <h2>Team 2 - Pokemon 1:</h2>
+                      {Team2.pokemonList.length > 0 && (
+                        <img
+                          src={getPokemonImageUrl(Team2.pokemonList[3].id)}
+                          alt={Team2.pokemonList[3].name}
+                        />
+                      )}
+                    </Box>
+                    <Button onClick={handleBattle4ButtonClick}>Battle</Button>
+                    {winnerStep4 && (
+                      <Box>
+                        <h2>Winner:</h2>
+                        <p>{winnerStep4}</p>
+                      </Box>
+                    )}
                     <Button onClick={handleNextButtonClick}>Next</Button>
-                  </div>
+                  </Box>
                 )}
                 {currentStep === 5 && (
-                  <div>
-                    <h1>Step 5</h1>
-                    {/* Add content for step 2 here */}
+                  <Box>
+                    <Box>
+                      <h2>Team 1 - Pokemon 1:</h2>
+                      {Team1.pokemonList.length > 0 && (
+                        <img
+                          src={getPokemonImageUrl(Team1.pokemonList[4].id)}
+                          alt={Team1.pokemonList[4].name}
+                        />
+                      )}
+                    </Box>
+                    <Box>
+                      <h2>Team 2 - Pokemon 1:</h2>
+                      {Team2.pokemonList.length > 0 && (
+                        <img
+                          src={getPokemonImageUrl(Team2.pokemonList[4].id)}
+                          alt={Team2.pokemonList[4].name}
+                        />
+                      )}
+                    </Box>
+                    <Button onClick={handleBattle5ButtonClick}>Battle</Button>
+                    {winnerStep5 && (
+                      <Box>
+                        <h2>Winner:</h2>
+                        <p>{winnerStep5}</p>
+                      </Box>
+                    )}
                     <Button onClick={handleNextButtonClick}>Next</Button>
-                  </div>
+                  </Box>
                 )}
                 {currentStep === 6 && (
-                  <div>
-                    <h1>Step 6</h1>
-                    {/* Add content for step 2 here */}
+                  <Box>
+                    <Box>
+                      <h2>Team 1 - Pokemon 1:</h2>
+                      {Team1.pokemonList.length > 0 && (
+                        <img
+                          src={getPokemonImageUrl(Team1.pokemonList[5].id)}
+                          alt={Team1.pokemonList[5].name}
+                        />
+                      )}
+                    </Box>
+                    <Box>
+                      <h2>Team 2 - Pokemon 1:</h2>
+                      {Team2.pokemonList.length > 0 && (
+                        <img
+                          src={getPokemonImageUrl(Team2.pokemonList[5].id)}
+                          alt={Team2.pokemonList[5].name}
+                        />
+                      )}
+                    </Box>
+                    <Button onClick={handleBattle6ButtonClick}>Battle</Button>
+                    {winnerStep6 && (
+                      <Box>
+                        <h2>Winner:</h2>
+                        <p>{winnerStep6}</p>
+                      </Box>
+                    )}
                     <Button onClick={handleNextButtonClick}>Next</Button>
-                  </div>
+                  </Box>
                 )}
                 {currentStep === 7 && (
-                  <div>
-                    <h1>result</h1>
-                    {/* Add content for step 2 here */}
+                  <Box>
+                    <h1>Result</h1>
+                    <p>Winner Team: {getTeamWithMostWins()}</p>
                     <Button onClick={handleNextButtonClick}>Next</Button>
-                  </div>
+                  </Box>
                 )}
               </Grid>
             ) : (
